@@ -4,9 +4,14 @@
 #include "buried_common.h"
 #include "include/buried.h"
 
+#include <memory>
 #include <string>
 
 #include <cstdint>
+
+namespace spdlog {
+class logger;
+}
 
 struct Buried
 {
@@ -28,5 +33,8 @@ public:
 
     BuriedResult Start(const Config& config);
     BuriedResult Report(std::string title, std::string data, uint32_t priority);
+
+private:
+    std::shared_ptr<spdlog::logger> m_logger;
 };
 #endif // !BURIED_CORE_H
