@@ -1,11 +1,14 @@
 #include "include/buried.h"
 #include "gtest/gtest.h"
 
+TEST(BuriedBasicTest, Test1)
+{
+    Buried_Create("G:/dev/cpp/BuriedPoint");
+}
 
-TEST(BuriedBasicTest, Test1) { EXPECT_EQ(BuriedTest(), 1); }
+int main(int argc, char* argv[])
+{
+    ::testing::InitGoogleTest(&argc, argv);
 
-int main(int argc, char *argv[]) {
-  ::testing::InitGoogleTest(&argc, argv);
-
-  return RUN_ALL_TESTS();
+    return RUN_ALL_TESTS();
 }

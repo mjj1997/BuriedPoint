@@ -1,7 +1,9 @@
 include_guard(GLOBAL)
 
 set(BURIED_SRCS
-    buried.cpp)
+    buried.cpp
+    buried_core.cpp
+)
 
 set(MODULE_NAME "Buried")
 
