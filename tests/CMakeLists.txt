@@ -4,6 +4,7 @@ project(BuriedTest)
 
 set(TEST_SRCS
     test.cpp
+    test_db.cpp
 )
 
 add_executable(buried_test ${TEST_SRCS})

@@ -16,7 +16,7 @@ def clear():
 def build_windows(platform='x64', config='Release', args=None):
     if config == "Debug":
         os.chdir(BUILD_DIR_PATH)
-        build_cmd = 'cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=%s -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER=cl' % (platform)
+        build_cmd = 'cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=%s -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER=cl -DCMAKE_C_COMPILER=cl' % (config)
     else:
         platform_dir = '%s/%s-%s' % (BUILD_DIR_PATH, platform, config)
 
@@ -46,7 +46,7 @@ def build_windows(platform='x64', config='Release', args=None):
 
 
 def main():
-    clear()
+    # clear()
     os.makedirs(BUILD_DIR_PATH, exist_ok=True)
     parser = argparse.ArgumentParser(description='build windows')
     parser.add_argument('--test', action='store_true', default=False,
